@@ -34,6 +34,7 @@ a:hover {
   text-decoration: none;
 }
 
+
 .link-two {
   color: #000000;
   transition: all 0.5s ease;
@@ -2120,6 +2121,20 @@ a:hover {
     transform: rotate(360deg);
   }
 }
+
+/* -------------------------------------------------------------
+
+# Forms
+
+ div.form-group{
+    display:grid;
+    grid-template-columns: max-content max-content;
+    grid-gap:5px;
+
+ }
+div.form-group label       { text-align:right; }
+div.form-group label:after { content: ":"; }
+----------------------------------------------------------------*/
 
 /*--------------------------------------------------------------
 # Footer
