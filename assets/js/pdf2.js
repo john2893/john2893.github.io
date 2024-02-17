@@ -51,7 +51,7 @@ Below are the dates:
   //var textLines = doc.splitTextToSize(content, pageWidth - 40); // Subtracting 40 for padding
   var textLines = doc.splitTextToSize(content, 180); // Subtracting 40 for padding
   
-  var contentHeight = doc.getTextDimensions(textLines).h  // Adding 40 for padding
+  var textHeight = doc.getTextDimensions(textLines).h  // Adding 40 for padding
 
   // Add the content to the PDF
   doc.text(textLines, 16, 30);
