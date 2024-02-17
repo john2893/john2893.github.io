@@ -66,7 +66,7 @@ Below are the dates:
   doc.autoTable({
     head: head,
     body: body,
-    startY: contentHeight + 20,
+    startY: textHeight + 40,
     showHead: 'firstPage',
     theme: 'grid', // Use the 'grid' theme
         styles: {
