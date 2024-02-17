@@ -50,7 +50,7 @@ Below are the dates:
 
   // Split the content into an array of strings that fit within the page width
   //var textLines = doc.splitTextToSize(content, pageWidth - 40); // Subtracting 40 for padding
-  var textLines = doc.splitTextToSize(content, 180); // Subtracting 40 for padding
+  var textLines = doc.splitTextToSize(content, 500); // Subtracting 40 for padding
   
   var textHeight = doc.getTextDimensions(textLines).h  // Adding 40 for padding
 
@@ -67,7 +67,7 @@ Below are the dates:
   doc.autoTable({
     head: head,
     body: body,
-    startY: textHeight + 40,
+    startY: textHeight + 360,
     showHead: 'firstPage',
     theme: 'grid', // Use the 'grid' theme
         styles: {
@@ -85,7 +85,8 @@ Below are the dates:
             4: { cellWidth: 'wrap' },
             5: { cellWidth: 'wrap' }
         },
-        split: 'avoid' // Avoid splitting the table across pages
+        split: 'avoid', // Avoid splitting the table across pages
+        margin: { left: 20 } 
   })
   
 
