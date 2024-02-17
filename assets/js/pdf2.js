@@ -67,6 +67,23 @@ Below are the dates:
     body: body,
     startY: contentHeight + 20,
     showHead: 'firstPage',
+    theme: 'grid', // Use the 'grid' theme
+        styles: {
+            lineWidth: 0.2, // Set the border width to 0.2 (thin)
+            lineColor: [0, 0, 0], // Set the border color to black
+            valign: 'middle', // Center the text vertically
+            halign: 'center' // Center the text horizontally
+        },
+        columnStyles: {
+            // Apply text wrapping to all columns
+            0: { cellWidth: 'wrap' },
+            1: { cellWidth: 'wrap' },
+            2: { cellWidth: 'wrap' },
+            3: { cellWidth: 'wrap' },
+            4: { cellWidth: 'wrap' },
+            5: { cellWidth: 'wrap' }
+        },
+        split: 'avoid' // Avoid splitting the table across pages
   })
   
 
