@@ -48,12 +48,13 @@ Below are the dates:
 
 
   // Split the content into an array of strings that fit within the page width
-  var textLines = doc.splitTextToSize(content, pageWidth - 40); // Subtracting 40 for padding
+  //var textLines = doc.splitTextToSize(content, pageWidth - 40); // Subtracting 40 for padding
+  var textLines = doc.splitTextToSize(content, 180); // Subtracting 40 for padding
+  
+  var contentHeight = doc.getTextDimensions(textLines).h  // Adding 40 for padding
 
   // Add the content to the PDF
   doc.text(textLines, 16, 30);
-  var contentHeight = doc.getTextDimensions(textLines).h + 80; // Adding 40 for padding
-
 
   // Simple data example
   var head = [['Annual Rent', 'Security Deposit', 'Term Of Payment', 'Landlord/Rent', 'Start Date', 'End Date']]
