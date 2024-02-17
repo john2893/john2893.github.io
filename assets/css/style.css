@@ -2145,6 +2145,7 @@ form h3,
 form h4,
 form p,
 form button {
+  padding: 20px;
   grid-column: span 2; /* lets those elements span both columns */
 }
 
