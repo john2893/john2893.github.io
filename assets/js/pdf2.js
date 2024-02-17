@@ -1,6 +1,7 @@
 function genPDF() {
   console.log("hi")
-  var doc = new jspdf()
+  //var doc = new jspdf()
+  var doc = new jsPDF('p', 'pt', 'a4');
 
   //variables
   var clientName = document.getElementById("clientName").value;
@@ -54,7 +55,7 @@ Below are the dates:
   var textHeight = doc.getTextDimensions(textLines).h  // Adding 40 for padding
 
   // Add the content to the PDF
-  doc.text(textLines, 16, 30);
+  doc.text(textLines, 20, 30);
 
   // Simple data example
   var head = [['Annual Rent', 'Security Deposit', 'Term Of Payment', 'Landlord/Rent', 'Start Date', 'End Date']]
