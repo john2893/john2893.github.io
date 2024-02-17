@@ -2145,7 +2145,7 @@ form h3,
 form h4,
 form p,
 form button {
-  padding: 20px;
+  
   grid-column: span 2; /* lets those elements span both columns */
 }
 
@@ -2166,7 +2166,9 @@ form input[type="radio"] {
   padding: 10px; /* Add padding inside the div */
   margin-top: 30px; /* Add margin at the top */
 }
-
+#genpdf {
+  padding: 10px;
+}
 /*--------------------------------------------------------------
 # Footer
 --------------------------------------------------------------*/
