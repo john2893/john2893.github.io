@@ -25,6 +25,12 @@
   <!-- Template Main CSS File -->
   <link href="assets/css/style.css" rel="stylesheet">
 
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.3.2/jspdf.debug.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf-autotable/3.1.1/jspdf.plugin.autotable.min.js"></script>
+  <script src="https://unpkg.com/jspdf-autotable@3.8.2/dist/jspdf.plugin.autotable.js"> </script>
+  <script src="https://unpkg.com/jspdf-autotable@3.5.22/dist/jspdf.plugin.autotable.js"></script>
+
+
   <!-- =======================================================
   * Template Name: EstateAgency
   * Updated: May 30 2023 with Bootstrap v5.3.0
@@ -35,103 +41,6 @@
 </head>
 
 <body>
-
-
-
-  <!-- ======= Property Search Section ======= -->
-  <!-- <div class="click-closed"></div>
-  
-  <div class="box-collapse">
-    <div class="title-box-d">
-      <h3 class="title-d">Search Property</h3>
-    </div>
-    <span class="close-box-collapse right-boxed bi bi-x"></span>
-    <div class="box-collapse-wrap form">
-      <form class="form-a">
-        <div class="row">
-          <div class="col-md-12 mb-2">
-            <div class="form-group">
-              <label class="pb-2" for="Type">Keyword</label>
-              <input type="text" class="form-control form-control-lg form-control-a" placeholder="Keyword">
-            </div>
-          </div>
-          <div class="col-md-6 mb-2">
-            <div class="form-group mt-3">
-              <label class="pb-2" for="Type">Type</label>
-              <select class="form-control form-select form-control-a" id="Type">
-                <option>All Type</option>
-                <option>For Rent</option>
-                <option>For Sale</option>
-                <option>Open House</option>
-              </select>
-            </div>
-          </div>
-          <div class="col-md-6 mb-2">
-            <div class="form-group mt-3">
-              <label class="pb-2" for="city">City</label>
-              <select class="form-control form-select form-control-a" id="city">
-                <option>All City</option>
-                <option>Alabama</option>
-                <option>Arizona</option>
-                <option>California</option>
-                <option>Colorado</option>
-              </select>
-            </div>
-          </div>
-          <div class="col-md-6 mb-2">
-            <div class="form-group mt-3">
-              <label class="pb-2" for="bedrooms">Bedrooms</label>
-              <select class="form-control form-select form-control-a" id="bedrooms">
-                <option>Any</option>
-                <option>01</option>
-                <option>02</option>
-                <option>03</option>
-              </select>
-            </div>
-          </div>
-          <div class="col-md-6 mb-2">
-            <div class="form-group mt-3">
-              <label class="pb-2" for="garages">Garages</label>
-              <select class="form-control form-select form-control-a" id="garages">
-                <option>Any</option>
-                <option>01</option>
-                <option>02</option>
-                <option>03</option>
-                <option>04</option>
-              </select>
-            </div>
-          </div>
-          <div class="col-md-6 mb-2">
-            <div class="form-group mt-3">
-              <label class="pb-2" for="bathrooms">Bathrooms</label>
-              <select class="form-control form-select form-control-a" id="bathrooms">
-                <option>Any</option>
-                <option>01</option>
-                <option>02</option>
-                <option>03</option>
-              </select>
-            </div>
-          </div>
-          <div class="col-md-6 mb-2">
-            <div class="form-group mt-3">
-              <label class="pb-2" for="price">Min Price</label>
-              <select class="form-control form-select form-control-a" id="price">
-                <option>Unlimite</option>
-                <option>$50,000</option>
-                <option>$100,000</option>
-                <option>$150,000</option>
-                <option>$200,000</option>
-              </select>
-            </div>
-          </div>
-          <div class="col-md-12">
-            <button type="submit" class="btn btn-b">Search Property</button>
-          </div>
-        </div>
-      </form>
-    </div>
-  </div> -->
-  <!-- End Property Search Section> -->
 
   <!-- ======= Header/Navbar ======= -->
   <nav class="navbar navbar-default navbar-trans navbar-expand-lg fixed-top">
@@ -150,27 +59,6 @@
             <a class="nav-link " href="index.html">Home</a>
           </li>
 
-          <li class="nav-item">
-            <a class="nav-link " href="about.html">About</a>
-          </li>
-
-          <!-- <li class="nav-item">
-            <a class="nav-link active" href="property-grid.html">Property</a>
-          </li> -->
-
-          <!-- <li class="nav-item">
-            <a class="nav-link " href="blog-grid.html">Blog</a>
-          </li>
-
-          <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Pages</a>
-            <div class="dropdown-menu">
-              <a class="dropdown-item " href="property-single.html">Property Single</a>
-              <a class="dropdown-item " href="blog-single.html">Blog Single</a>
-              <a class="dropdown-item " href="agents-grid.html">Agents Grid</a>
-              <a class="dropdown-item " href="agent-single.html">Agent Single</a>
-            </div>
-          </li> -->
           <li class="nav-item">
             <a class="nav-link " href="contact.html">Contact</a>
           </li>
@@ -221,62 +109,57 @@
           </div> -->
           <h1>Return on Investment (ROI) Calculator</h1>
           <div class="col">
-            
             <form>
               <div class="form-group">
-
-                <label for="annualRent">Annual Rent</label>
-                <input type="text" class="form-control" id="annualRent" aria-describedby="annualRent" >
+                <label for="clientName">Client Name</label>
+                <input type="text" class="form-control" id="clientName" aria-describedby="clientName">
               </div>
 
               <div class="form-group">
-                <label for="securityDep">Securit Deposit</label>
-                <input type="text" class="form-control" id="securityDep" aria-describedby="securityDep" >
+                <label for="annualRent">Annual Rent</label>
+                <input type="number" class="form-control" id="annualRent" aria-describedby="annualRent">
               </div>
-               
+        
+              <div class="form-group">
+                <label for="securityDep">Security Deposit</label>
+                <input type="text" class="form-control" id="securityDep" aria-describedby="securityDep">
+              </div>
+        
               <div class="form-group">
                 <label for="termofPayment">Term Of Payment</label>
-                <input type="number" class="form-control" id="termofPayment" aria-describedby="termofPayment" >
+                <input type="number" class="form-control" id="termofPayment" aria-describedby="termofPayment">
               </div>
-                
+        
               <div>
-                
-                <h4>Landlord/Rent</h4>
-                <input type="radio" name="Landlord" id="landlord">
-                <label for="option1">Landlord</label>
-                
-                <input type="radio" name="Rent" id="Rent">
-                <label for="option2">Rent</label>
-
-
+                <label for="landlordName">Landlord Name</label>
+                <input type="text" class="form-control" id="landlordName" aria-describedby="landlordName">
                
-
+              </div>
+        
+              <div class="form-group">
+                <div class="row">
+                  <div class="col-md-6">
+                      <label for="startdate">Start Date</label>
+                      <input type="date" class="form-control" id="startdate" aria-describedby="startdate" placeholder="Start Date">
+                  </div>
+                  <div class="col-md-6">
+                      <label for="enddate">End Date</label>
+                      <input type="date" class="form-control" id="enddate" aria-describedby="enddate" placeholder="End Date">
+                  </div>
+              </div>
               </div>
 
-              <div class="form-group">
-                <label for="startDate">Start Date</label>
-                <input type="date" class="form-control" id="startdate" aria-describedby="startdate" >
-
-              </div> 
-              
-              <div class="form-group">
-                <label for="endDate">End Date</label>
-                <input type="date" class="form-control" id="enddate" aria-describedby="enddate" >
-              </div>
-
-              
-              <button type="submit" class="btn btn-primary">Submit</button>
+              <button type="button" onclick="showInput();" class="btn btn-primary">Submit</button>
             </form>
+            
+            
         
           </div>
-          <div class="col">
-           
           
-        
-        
-          
-        </div>
       </div>
+      <div id="result" class="result"></div>
+      <div id="formTable"></div>
+      <button onclick="genPDF()"> Generate PDF </button>
     </section><!-- End Property Grid Single-->
 
   </main><!-- End #main -->
@@ -292,82 +175,15 @@
             </div>
             <div class="w-body-a">
               <p class="w-text-a color-text-a">
-                Enim minim veniam quis nostrud exercitation ullamco laboris nisi ut aliquip exea commodo consequat duis
-                sed aute irure.
+                What this site is all about .....
               </p>
             </div>
-            <div class="w-footer-a">
-              <ul class="list-unstyled">
-                <!-- <li class="color-a">
-                  <span class="color-text-a">Phone .</span> contact@example.com
-                </li> -->
-                <li class="color-a">
-                  <span class="color-text-a">Email .</span> +54 356 945234
-                </li>
-              </ul>
-            </div>
           </div>
         </div>
         <div class="col-sm-12 col-md-4 section-md-t3">
-          <!-- <div class="widget-a">
-            <div class="w-header-a">
-              <h3 class="w-title-a text-brand">The Company</h3>
-            </div>
-            <div class="w-body-a">
-              <div class="w-body-a">
-                <ul class="list-unstyled">
-                  <li class="item-list-a">
-                    <i class="bi bi-chevron-right"></i> <a href="#">Site Map</a>
-                  </li>
-                  <li class="item-list-a">
-                    <i class="bi bi-chevron-right"></i> <a href="#">Legal</a>
-                  </li>
-                  <li class="item-list-a">
-                    <i class="bi bi-chevron-right"></i> <a href="#">Agent Admin</a>
-                  </li>
-                  <li class="item-list-a">
-                    <i class="bi bi-chevron-right"></i> <a href="#">Careers</a>
-                  </li>
-                  <li class="item-list-a">
-                    <i class="bi bi-chevron-right"></i> <a href="#">Affiliate</a>
-                  </li> -->
-                  <!-- <li class="item-list-a">
-                    <i class="bi bi-chevron-right"></i> <a href="#">Privacy Policy</a>
-                  </li>
-                </ul>
-              </div>
-            </div>
-          </div> --> 
+         
         </div>
-        <div class="col-sm-12 col-md-4 section-md-t3">
-          <div class="widget-a">
-            <div class="w-header-a">
-              <h3 class="w-title-a text-brand">International sites</h3>
-            </div>
-            <div class="w-body-a">
-              <ul class="list-unstyled">
-                <li class="item-list-a">
-                  <i class="bi bi-chevron-right"></i> <a href="#">Venezuela</a>
-                </li>
-                <li class="item-list-a">
-                  <i class="bi bi-chevron-right"></i> <a href="#">China</a>
-                </li>
-                <li class="item-list-a">
-                  <i class="bi bi-chevron-right"></i> <a href="#">Hong Kong</a>
-                </li>
-                <li class="item-list-a">
-                  <i class="bi bi-chevron-right"></i> <a href="#">Argentina</a>
-                </li>
-                <li class="item-list-a">
-                  <i class="bi bi-chevron-right"></i> <a href="#">Singapore</a>
-                </li>
-                <li class="item-list-a">
-                  <i class="bi bi-chevron-right"></i> <a href="#">Philippines</a>
-                </li>
-              </ul>
-            </div>
-          </div>
-        </div>
+        
       </div>
     </div>
   </section>
@@ -386,38 +202,12 @@
               <li class="list-inline-item">
                 <a href="#">Property</a>
               </li>
-              <!-- <li class="list-inline-item">
-                <a href="#">Blog</a>
-              </li> -->
+
               <li class="list-inline-item">
                 <a href="#">Contact</a>
               </li>
             </ul>
           </nav>
-          <div class="socials-a">
-            <ul class="list-inline">
-              <li class="list-inline-item">
-                <a href="#">
-                  <i class="bi bi-facebook" aria-hidden="true"></i>
-                </a>
-              </li>
-              <li class="list-inline-item">
-                <a href="#">
-                  <i class="bi bi-twitter" aria-hidden="true"></i>
-                </a>
-              </li>
-              <li class="list-inline-item">
-                <a href="#">
-                  <i class="bi bi-instagram" aria-hidden="true"></i>
-                </a>
-              </li>
-              <li class="list-inline-item">
-                <a href="#">
-                  <i class="bi bi-linkedin" aria-hidden="true"></i>
-                </a>
-              </li>
-            </ul>
-          </div>
           <div class="copyright-footer">
             <p class="copyright color-text-a">
               &copy; Copyright
@@ -443,11 +233,20 @@
 
   <!-- Vendor JS Files -->
   <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-  <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
-  <script src="assets/vendor/php-email-form/validate.js"></script>
+
 
   <!-- Template Main JS File -->
   <script src="assets/js/main.js"></script>
+
+  <!-- JS for the form - math output -->
+  <script src="assets/js/math.js"></script>
+
+  <!-- PDF work -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.3/jspdf.umd.min.js"></script>
+
+
+  <script src="assets/js/pdf2.js"></script>
+
 
 </body>
 
